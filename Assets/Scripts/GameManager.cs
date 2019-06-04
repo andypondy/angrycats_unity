@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour {
 
         //generate unique id
         var eqString = "" + x + " + " + y;
-        equation eq = new equation(this.equations.Count+1, x, y, answer, eqString, equation.Status.incomplete);//{x:x, y:y, answer:answer, eq: eq, id:this.equations.length, status:"incomplete"};
+        equation eq = new equation(this.equations.Count, x, y, answer, eqString, equation.Status.incomplete);//{x:x, y:y, answer:answer, eq: eq, id:this.equations.length, status:"incomplete"};
 
         this.equations.Add(eq);
         return eq;
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour {
                 returnEquations.Add(this.createMathEquation(this.difficulty));
             }
         }
-        // equation.debugEq(returnEquations);
+        equation.debugEq(returnEquations);
         return returnEquations;
     }
 }

@@ -29,11 +29,11 @@ public class equation {
 
 	public static void debugEq(List<equation> equations) {
         for(var i=0; i < equations.Count; i++) {
-            Debug.Log("equation:  " + equations[i].positionX + "+" + equations[i].positionY + "=" + equations[i].answer + ", status=" + equations[i].status);
+            Debug.Log("equation: #" + equations[i].id + ":" + equations[i].positionX + "+" + equations[i].positionY + "=" + equations[i].answer + ", status=" + equations[i].status);
         }
     }
 	public static void debugEq(equation eq) {
-        Debug.Log("equation:  " + eq.positionX + "+" + eq.positionY + "=" + eq.answer + ", status=" + eq.status);
+        Debug.Log("equation: #" + eq.id + ":" + eq.positionX + "+" + eq.positionY + "=" + eq.answer + ", status=" + eq.status);
     }
 
 }

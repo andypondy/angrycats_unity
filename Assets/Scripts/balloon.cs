@@ -36,8 +36,17 @@ public class balloon : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ground")
         {
+			Debug.Log("balloon.cs - removing ");
+			equation.debugEq(this.eq);
+			
             this.spawnmanager.game.bombMissed(this.eq);
 			SimplePool.Despawn(this.gameObject);
         }
+		else {
+			if (collision.gameObject.tag == "tile")
+			{
+
+			}
+		}
 	}
 }
