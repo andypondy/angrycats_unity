@@ -13,10 +13,11 @@ public class balloon : MonoBehaviour {
 
 	private equation eq;
 	private Vector2 target;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
-		
+		animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -34,19 +35,38 @@ public class balloon : MonoBehaviour {
     }
 
 	void OnCollisionEnter2D(Collision2D collision) {
+		onCollisionHander(collision);
+	}
+
+	void OnCollisionStay2D(Collision2D collision) {
+		onCollisionHander(collision);
+    }
+
+	void onCollisionHander(Collision2D collision) {
 		if (collision.gameObject.tag == "ground")
         {
-			Debug.Log("balloon.cs - removing ");
-			equation.debugEq(this.eq);
-			
             this.spawnmanager.game.bombMissed(this.eq);
 			SimplePool.Despawn(this.gameObject);
         }
 		else {
 			if (collision.gameObject.tag == "tile")
 			{
+				singleTileBehaviour tile = collision.gameObject.GetComponent<singleTileBehaviour>();
+				tile.OnEndDrag(null);
 
+				if (tile.eq.answer == this.eq.answer) {
+					this.spawnmanager.game.bombDefused(this.eq);
+
+					// shot animation
+					animator.Play("splash");
+
+					Invoke("postSplash", 0.5f);
+				}
 			}
 		}
+	}
+
+	void postSplash() {
+		SimplePool.Despawn(this.gameObject);
 	}
 }

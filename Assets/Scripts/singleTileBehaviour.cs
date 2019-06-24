@@ -8,32 +8,29 @@ public class singleTileBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandle
 
 	[SerializeField]
 	Text answerDisplay;
-	private bool isDragged;
-	private equation eq;
+	public equation eq;
 	private Vector3 startPosition;
-	private Vector2 moveToPosition;
 	public static GameObject DraggedInstance;
- 
-	Vector3 _startPosition;
 	Vector3 _offsetToMouse;
 	float _zDistanceToCamera;
+	private bool returnToStart = false;
 
 	// Use this for initialization
 	void Start () {
 		this.startPosition = this.transform.position;
-		this.isDragged = false;
-		this.moveToPosition = new Vector2(0,0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (returnToStart) {
+			// Set our position as a fraction of the distance between the markers.
+			transform.position = Vector3.Lerp(transform.position, this.startPosition, 0.1f);
+		}
+		if (Mathf.Abs(transform.position.y - this.startPosition.y) < 0.5) {
+			transform.position = this.startPosition;
+			returnToStart = false;
+		}
 	}
-
-	public void reset() {
-        this.isDragged = false;
-        this.transform.position = this.startPosition;
-    }
 
     public void setEq(equation eq) {
         this.eq = eq;
@@ -46,10 +43,9 @@ public class singleTileBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandle
 	public void OnBeginDrag (PointerEventData eventData)
 	{
 		DraggedInstance = gameObject;
-		_startPosition = transform.position;
-		_zDistanceToCamera = Mathf.Abs (_startPosition.z - Camera.main.transform.position.z);
+		_zDistanceToCamera = Mathf.Abs (this.startPosition.z - Camera.main.transform.position.z);
 
-		_offsetToMouse = _startPosition - Camera.main.ScreenToWorldPoint (
+		_offsetToMouse = this.startPosition - Camera.main.ScreenToWorldPoint (
 			new Vector3 (Input.mousePosition.x, Input.mousePosition.y, _zDistanceToCamera)
 		);
 	}
@@ -57,6 +53,9 @@ public class singleTileBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandle
 	public void OnDrag (PointerEventData eventData)
 	{
 		if(Input.touchCount > 1)
+			return;
+
+		if (DraggedInstance == null)
 			return;
 
 		transform.position = Camera.main.ScreenToWorldPoint (
@@ -68,6 +67,6 @@ public class singleTileBehaviour : MonoBehaviour, IBeginDragHandler, IDragHandle
 	{
 		DraggedInstance = null;
 		_offsetToMouse = Vector3.zero;
-		transform.position = _startPosition;
+		returnToStart = true;
 	}
 }

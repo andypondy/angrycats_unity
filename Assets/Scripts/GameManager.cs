@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
 	public int bossHP = 100;
 	public int bossDamage = 20;
 	public int difficulty = 1;
-    public float spawnInterval = 2.0f;
+    public float spawnInterval = 3.0f;
 	/* Level info
 		to be moved to level mananger
 	 */
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour {
         this.refToSpawnManager = this.GetComponent<SpawnManager>();
         this.refToSpawnManager.game = this;
         this.refToTileManager.game = this;
-   		this.refToTileManager.setupAnswers();
+   		this.refToTileManager.setupAnswers(true);
 
         // this.enemyHealthComponent = this.enemyHealth.getComponent('Health');
 	}

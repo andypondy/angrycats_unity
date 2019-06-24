@@ -13,8 +13,14 @@ public class TileManager : MonoBehaviour {
 	void Start () {
 	}
 
-	public void setupAnswers() {
-        this.equations = this.shuffle(this.game.getNextEquations(this.maxTiles));
+	public void setupAnswers(bool shuffle = false) {
+        var eqs = this.game.getNextEquations(this.maxTiles);
+        if (shuffle) {
+            this.equations = this.shuffle(eqs);
+        }
+        else {
+            this.equations = eqs;
+        }
         for(var i=0; i < this.maxTiles; i++) {
             singleTileBehaviour newTile = this.tiles[i].GetComponent<singleTileBehaviour>();
             newTile.setEq(this.equations[i]);
