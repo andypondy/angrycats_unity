@@ -9,7 +9,11 @@ public class GameManager : MonoBehaviour {
 	private TileManager refToTileManager;
 	private SpawnManager refToSpawnManager;
 
-	private GameObject bossHealth;
+    [SerializeField]
+    private BossHealth bossHealth;
+
+    [SerializeField]
+    private PlayerHealth playerHealth;
 	private GameObject playerName;
 
 	/* Level info
@@ -46,7 +50,8 @@ public class GameManager : MonoBehaviour {
         this.refToTileManager.game = this;
    		this.refToTileManager.setupAnswers(true);
 
-        // this.enemyHealthComponent = this.enemyHealth.getComponent('Health');
+        this.bossHealth.reset(this.bossHP);
+        this.playerHealth.reset(this.bossHP);
 	}
 	void reset() {
 		this.currentBombs = 0;
@@ -71,26 +76,27 @@ public class GameManager : MonoBehaviour {
 
     public void bombMissed(equation eq) {
         // do some damage to Player
+        this.playerHealth.takeDamage(this.bossDamage);
 
         // mark equation as missed
         this.equations[eq.id].status = equation.Status.missed;
         this.refToTileManager.setupAnswers();
         
-        this.bombDestroyed();
+        this.destroyBomb();
     }
 
     public void bombDefused(equation eq) {
         // do some damage to Boss
-        // this.enemyHealthComponent.takeDamage(this.catDamage);
+        this.bossHealth.takeDamage(this.bossDamage);
 
         // mark equation as solved
         this.equations[eq.id].status = equation.Status.solved;
         this.refToTileManager.setupAnswers();
 
-        this.bombDestroyed();
+        this.destroyBomb();
     }
 
-    void bombDestroyed() {
+    void destroyBomb() {
         this.currentBombs--;
     }
 
@@ -131,7 +137,7 @@ public class GameManager : MonoBehaviour {
                 returnEquations.Add(this.createMathEquation(this.difficulty));
             }
         }
-        equation.debugEq(returnEquations);
+        // equation.debugEq(returnEquations);
         return returnEquations;
     }
 }
