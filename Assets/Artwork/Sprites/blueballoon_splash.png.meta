@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: f4a9d9ef82c494442897a69a859cde0a
+guid: c562cc753fbd749339879bc3a4700318
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 21300000
-    second: blueball_0
+      213: -2289694654036918503
+    second: blueballoon_splash_0
   - first:
-      213: 21300002
-    second: blueball_1
+      213: -9197896121060442307
+    second: blueballoon_splash_1
   - first:
-      213: 21300004
-    second: blueball_2
+      213: 5927487669583791588
+    second: blueballoon_splash_2
   - first:
-      213: 21300006
-    second: blueball_3
+      213: -723987142326295383
+    second: blueballoon_splash_3
   - first:
-      213: 21300008
-    second: blueball_4
+      213: 655205080430144755
+    second: blueballoon_splash_4
   - first:
-      213: 21300010
-    second: blueball_5
+      213: 5362032980168753741
+    second: blueballoon_splash_5
   - first:
-      213: 21300012
-    second: blueball_6
+      213: 2956648163396434223
+    second: blueballoon_splash_6
   - first:
-      213: 21300014
-    second: blueball_7
+      213: -1546514813510806205
+    second: blueballoon_splash_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -93,7 +93,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -105,7 +105,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
@@ -117,87 +117,12 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: blueball_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 600
-        width: 300
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 336c6977874e243bcaeeefde815772ae
-      internalID: 21300000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blueball_1
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 600
-        width: 300
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a8807eca7b584b55ae087505b4c7d2d
-      internalID: 21300002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blueball_2
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 600
-        width: 300
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 510e7b964c42f47909e9f2e745abb38f
-      internalID: 21300004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blueball_3
+      name: blueballoon_splash_0
       rect:
         serializedVersion: 2
         x: 0
@@ -211,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7256aee56aace45649868b893b356ea9
-      internalID: 21300006
+      spriteID: 406a83be296b54db68c977331cb4b02a
+      internalID: -2289694654036918503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueball_4
+      name: blueballoon_splash_1
       rect:
         serializedVersion: 2
         x: 300
@@ -232,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0d5c9563ba0c4b20831cb86d6f5700f
-      internalID: 21300008
+      spriteID: 1912a482776a743928552c484fb5c69c
+      internalID: -9197896121060442307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueball_5
+      name: blueballoon_splash_2
       rect:
         serializedVersion: 2
         x: 600
@@ -253,14 +178,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fedb15fae159b46168995d35cbb013d2
-      internalID: 21300010
+      spriteID: e951779b84a274dbd98e8b3f175485d2
+      internalID: 5927487669583791588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueball_6
+      name: blueballoon_splash_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 300
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc13e9db8e104540a8ec16aeb1164f9
+      internalID: -723987142326295383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueballoon_splash_4
       rect:
         serializedVersion: 2
         x: 0
@@ -274,14 +220,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37944ec23665840afa6531b9dfe0ba09
-      internalID: 21300012
+      spriteID: ce782777630c04ab5982e00454542340
+      internalID: 655205080430144755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueball_7
+      name: blueballoon_splash_5
       rect:
         serializedVersion: 2
         x: 300
@@ -295,8 +241,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 952a235bc97614ce390f46892e9467f5
-      internalID: 21300014
+      spriteID: a4e687b9729b040b0b939a837bfc5983
+      internalID: 5362032980168753741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueballoon_splash_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89c1b8fe3d264f8bb20cc5a43378c83
+      internalID: 2956648163396434223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueballoon_splash_7
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43dffa5b835334d63b126a205894658c
+      internalID: -1546514813510806205
       vertices: []
       indices: 
       edges: []
@@ -304,7 +292,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8d0027a4d3f96438d83b9bb491133ec1
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

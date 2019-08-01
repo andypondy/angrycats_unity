@@ -58,7 +58,7 @@ public class balloon : MonoBehaviour {
 					this.spawnmanager.game.bombDefused(this.eq);
 
 					// shot animation
-					animator.Play("splash");
+					animator.Play("balloon_splash");
 
 					Invoke("postSplash", 0.5f);
 				}
